@@ -1,15 +1,24 @@
-import Header from "./components/header"
-import ProductList from "./components/ProductList"
-import Footer from "./components/Footer"
-function App() {
-  
-  return (
-    <>
-      <Header/>
-      <ProductList/>
-      <Footer/>
-    </>
-  )
-}
+import React from 'react';
+import Header from './components/Header';
+import ProductList from './components/ProductList';
+import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
+import Footer from './components/Footer';
 
-export default App
+const App = () => {
+  return (
+    <React.StrictMode>
+    <ThemeProvider>
+      <CartProvider>
+        <div className="min-h-screen transition bg-white dark:bg-gray-900">
+          <Header />
+          <ProductList />
+          <Footer />
+        </div>
+      </CartProvider>
+    </ThemeProvider>
+    </React.StrictMode>
+  );
+};
+
+export default App;
