@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { ThemeContext } from '../context/ThemeContext';
 import logo from '../assets/react.svg'; // Asegúrate de que esta ruta sea correcta

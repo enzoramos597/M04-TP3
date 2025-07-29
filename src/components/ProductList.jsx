@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../context/CartContext';
+import productsData from '../data.json'; // Importa tu archivo JSON aquí
 
 const ProductList = () => {
   const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
-  }, []);
+    setProducts(productsData);
+  }, [])
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-8 max-w-6xl mx-auto ">
